@@ -1,0 +1,23 @@
+<!DOCTYE html>
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        {% if form.errors %}
+        <p> entered something wrong !</p>
+        {% endif %}
+
+        {% if next %}
+        <p>you can't access that page.</p>
+        {% endif %}
+
+     <form method="post" action="{% url 'login' %}">
+         {% csrf_token %}
+         <p> User Name : {{ form.username}} </p>
+         <p>Password : {{form.password}}</p>
+         <input type="submit"= value="login">
+         <input type="hidden" name="next" value="{{next}}">
+     </form>
+    </body>
+</html>

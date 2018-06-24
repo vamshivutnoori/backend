@@ -1,0 +1,16 @@
+<!DOCTYE html>
+<html>
+    <head>
+        <title>The Index</title>
+    </head>
+    <body>
+        <h1> this is index page </h1>
+        {% if user.is_authenticated %}
+        <h2> Hi , {{user.username}} have a good day :)</h2>
+        {% else %}
+        <h2> YOu are not logged in :(</h2>
+        
+        {% endif %}
+
+    </body>
+</html>
